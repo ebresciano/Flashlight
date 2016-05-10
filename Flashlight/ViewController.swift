@@ -8,7 +8,34 @@
 
 import UIKit
 
+
+var isOn: Bool = false
+
+
+
+
 class ViewController: UIViewController {
+
+    @IBAction func ButtonTapped(sender: AnyObject) {
+        if isOn {
+            isOn = false
+            self.view.backgroundColor = .blackColor()
+            
+            sender.setTitleColor(UIColor.yellowColor(),forState: UIControlState.Normal)
+            
+            sender.setTitle("ON", forState: UIControlState.Normal)
+            
+    }
+        else {
+            isOn = true
+            self.view.backgroundColor = .whiteColor()
+            sender.setTitleColor(UIColor.blackColor(),forState: UIControlState.Normal)
+            sender.setTitle("OFF", forState: UIControlState.Normal)
+            
+            }
+    }
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,4 +49,13 @@ class ViewController: UIViewController {
 
 
 }
+
+
+
+
+
+
+
+
+
 
